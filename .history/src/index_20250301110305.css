@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+.input {
+  @apply border-3 border-blue-200 focus:outline-blue-500 w-full rounded-md p-1;
+}
+
+.containerForm {
+  @apply flex items-center justify-center h-screen bg-blue-100 flex-grow overflow-y-auto;
+}
+.parentContainerForm {
+  @apply w-full max-w-md bg-white p-8 rounded-lg shadow-lg;
+}
+
+.heading {
+  @apply text-3xl font-bold mb-6 text-gray-800 text-center p-4;
+}
+
+.taskContainer {
+  @apply bg-blue-100 lg:h-full min-h-108 justify-center flex;
+}
+.taskinnerContainer {
+  @apply mt-10 text-center h-[90%]  shadow-lg bg-amber-50  rounded-xl p-10  max-w-md w-full;
+}
+
+.btndesign {
+  @apply mt-3 cursor-pointer rounded-md py-2 mb-2  w-40 bg-blue-400  hover:bg-blue-500 hover:text-white;
+}

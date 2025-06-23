@@ -2,8 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const navItems = [
-  { path: "/", label: "Home" },
-  { path: "/home", label: "TaskList" },
+  { path: "/", label: "Landing" },
+  { path: "/home", label: "Home" },
   { path: "/addtask", label: "Add Task" },
 
   { path: "/login", label: "Login" },

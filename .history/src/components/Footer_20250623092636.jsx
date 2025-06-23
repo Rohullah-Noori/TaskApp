@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="bg-blue-400 text-white py-4 w-full">
+    <footer className="bg-blue-500 text-white py-4 w-full">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
         <h1 className="text-lg font-semibold">Contact Us</h1>
 
@@ -21,10 +21,12 @@ function Footer() {
             rel="noopener noreferrer"
             className="hover:text-gray-300 transition"
           >
-            <FaLinkedin />
+            <a href="#">
+              <FaLinkedin />
+            </a>
           </a>
           <a
-            href="mailto:rohullah313noori313@gmail.com"
+            href="mailto:yourmail@example.com"
             className="hover:text-gray-300 transition"
           >
             <FaEnvelope />

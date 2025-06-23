@@ -43,7 +43,7 @@ function Addtask() {
 
       <main className="flex-grow flex justify-center items-center px-4">
         <div className="w-full max-w-md bg-white p-6 rounded-xl shadow-lg mt-10 mb-10">
-          <h1 className="text-2xl font-bold text-center mb-6 text-blue-400">
+          <h1 className="text-2xl font-bold text-center mb-6 text-blue-500">
             Add Task
           </h1>
 
@@ -92,7 +92,7 @@ function Addtask() {
 
             <button
               type="submit"
-              className="w-full bg-blue-400 hover:bg-blue-500 text-white py-2 rounded-md mt-4 font-semibold transition"
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md mt-4 font-semibold transition"
             >
               Add to Task List
             </button>

@@ -20,7 +20,7 @@ function Landing() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col justify-between min-h-118 bg-blue-100 overflow-hidden">
+      <div className="flex flex-col justify-between min-h-117.6 bg-blue-100 overflow-hidden">
         <main className="flex-grow flex justify-center items-center px-6 sm:px-10">
           <div className="max-w-3xl text-center space-y-6">
             <h2 className="font-bold text-2xl sm:text-3xl text-blue-600">

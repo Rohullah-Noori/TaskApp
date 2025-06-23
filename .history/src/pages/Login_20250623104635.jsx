@@ -40,7 +40,7 @@ function Login() {
       <Navbar />
       <main className="min-h-[80vh] flex justify-center items-center bg-blue-50 px-4">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6">
-          <h2 className="text-2xl font-bold text-center text-blue-400 mb-4">
+          <h2 className="text-2xl font-bold text-center text-blue-600 mb-4">
             Login
           </h2>
 

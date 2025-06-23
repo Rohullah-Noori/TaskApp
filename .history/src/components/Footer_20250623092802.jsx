@@ -21,6 +21,7 @@ function Footer() {
             rel="noopener noreferrer"
             className="hover:text-gray-300 transition"
           >
+            =
             <FaLinkedin />
           </a>
           <a

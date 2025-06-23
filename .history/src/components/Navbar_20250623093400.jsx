@@ -2,13 +2,13 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const navItems = [
-  { path: "/", label: "Home" },
-  { path: "/home", label: "TaskList" },
+  { path: "/home", label: "Home" },
   { path: "/addtask", label: "Add Task" },
-
+  { path: "/", label: "Landing" },
   { path: "/login", label: "Login" },
   { path: "/signup", label: "Sign Up" },
   { path: "/logout", label: "Log Out" },
+  { path: "/edittask", label: "Edit" },
 ];
 
 function Navbar() {

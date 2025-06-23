@@ -46,25 +46,25 @@ function Home() {
   }, [tasks]);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-blue-50">
+    <div className="min-h-screen flex flex-col justify-between">
       <Navbar />
 
-      <main className="flex-grow flex justify-center p-4">
-        <div className="w-full max-w-6xl bg-amber-50 shadow-lg rounded-xl p-6">
-          <h1 className="text-2xl font-bold text-center mb-6 text-blue-600">
+      <main className="flex justify-center mt-10 px-4">
+        <div className="w-full max-w-4xl bg-amber-50 rounded-xl shadow-lg p-6 mb-10">
+          <h1 className="text-2xl font-bold text-center mb-6 text-blue-400">
             Task List
           </h1>
 
           {loading && <Loader />}
 
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {tasks && tasks.length > 0 ? (
-              tasks.map((task) => (
+          {tasks && tasks.length > 0 ? (
+            <ul className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {tasks.map((task) => (
                 <li
                   key={task.id}
-                  className="bg-white rounded-lg shadow-md p-4 border border-blue-100"
+                  className="bg-white rounded-xl p-4 shadow-md space-y-2 border border-blue-100"
                 >
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center space-x-2">
                     <input
                       type="checkbox"
                       checked={task.completed}
@@ -80,7 +80,7 @@ function Home() {
                       className="cursor-pointer accent-green-500"
                     />
                     <span
-                      className={`font-medium ${
+                      className={`font-semibold ${
                         task.completed ? "text-green-600" : "text-red-500"
                       }`}
                     >
@@ -99,30 +99,27 @@ function Home() {
                       ? new Date(task.endTime).toLocaleString()
                       : "Not set"}
                   </div>
-                  <div className="flex justify-between mt-4 gap-2">
+                  <div className="flex justify-between mx-10">
                     <Button onClick={() => handleEdit(task.id)}>Edit</Button>
                     <Button onClick={() => openDeleteModal(task.id)}>
                       Delete
                     </Button>
                   </div>
                 </li>
-              ))
-            ) : (
-              <p className="text-center text-gray-500 col-span-full">
-                No tasks available
-              </p>
-            )}
-          </ul>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-center text-gray-500">No tasks available</p>
+          )}
 
-          <div className="flex justify-center mt-10">
+          <div className="mt-8 flex justify-center">
             <Button onClick={handleAddTask}>Add Task</Button>
           </div>
 
-          {/* Delete Confirmation Modal */}
           <Dialog.Root open={isModalOpen} onOpenChange={setIsModalOpen}>
             <Dialog.Portal>
               <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
-              <Dialog.Content className="fixed inset-0 flex justify-center items-center px-4">
+              <Dialog.Content className="fixed inset-0 flex justify-center items-center">
                 <div className="bg-white rounded-xl p-6 shadow-2xl max-w-sm w-full">
                   <h2 className="text-lg font-bold mb-2">Are you sure?</h2>
                   <p className="text-sm text-red-500 mb-4">

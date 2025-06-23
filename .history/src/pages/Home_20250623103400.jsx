@@ -11,7 +11,6 @@ function Home() {
   const { tasks, setTasks, loading, setIsloading } = useTasks();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState(null);
-  const navigate = useNavigate();
 
   const openDeleteModal = (id) => {
     setTaskToDelete(id);
@@ -23,6 +22,8 @@ function Home() {
     setTasks(updatedTasks);
     setIsModalOpen(false);
   };
+
+  const navigate = useNavigate();
 
   const handleAddTask = (e) => {
     e.preventDefault();
@@ -46,25 +47,25 @@ function Home() {
   }, [tasks]);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-blue-50">
+    <div className="min-h-screen flex flex-col justify-between">
       <Navbar />
 
-      <main className="flex-grow flex justify-center p-4">
+      <main className="flex-grow flex justify-center px-4 py-8 bg-blue-50">
         <div className="w-full max-w-6xl bg-amber-50 shadow-lg rounded-xl p-6">
-          <h1 className="text-2xl font-bold text-center mb-6 text-blue-600">
+          <h1 className="text-2xl font-bold text-center mb-6 text-blue-500">
             Task List
           </h1>
 
           {loading && <Loader />}
 
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {tasks && tasks.length > 0 ? (
               tasks.map((task) => (
                 <li
                   key={task.id}
-                  className="bg-white rounded-lg shadow-md p-4 border border-blue-100"
+                  className="bg-white rounded-xl p-4 shadow-md space-y-2 border border-blue-100"
                 >
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center gap-2">
                     <input
                       type="checkbox"
                       checked={task.completed}
@@ -80,26 +81,26 @@ function Home() {
                       className="cursor-pointer accent-green-500"
                     />
                     <span
-                      className={`font-medium ${
+                      className={`font-semibold ${
                         task.completed ? "text-green-600" : "text-red-500"
                       }`}
                     >
                       {task.title}
                     </span>
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-gray-700">
                     <strong>Start:</strong>{" "}
                     {task.startTime
                       ? new Date(task.startTime).toLocaleString()
                       : "Not set"}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-gray-700">
                     <strong>End:</strong>{" "}
                     {task.endTime
                       ? new Date(task.endTime).toLocaleString()
                       : "Not set"}
                   </div>
-                  <div className="flex justify-between mt-4 gap-2">
+                  <div className="flex justify-between mt-4">
                     <Button onClick={() => handleEdit(task.id)}>Edit</Button>
                     <Button onClick={() => openDeleteModal(task.id)}>
                       Delete
@@ -108,13 +109,14 @@ function Home() {
                 </li>
               ))
             ) : (
-              <p className="text-center text-gray-500 col-span-full">
+              <p className="text-gray-500 text-center col-span-full">
                 No tasks available
               </p>
             )}
           </ul>
 
-          <div className="flex justify-center mt-10">
+          {/* Add Task Button */}
+          <div className="mt-8 flex justify-center">
             <Button onClick={handleAddTask}>Add Task</Button>
           </div>
 
@@ -130,28 +132,4 @@ function Home() {
                   </p>
                   <div className="flex justify-between">
                     <Button
-                      onClick={() => setIsModalOpen(false)}
-                      className="bg-gray-300 hover:bg-gray-400 text-black rounded-md"
-                    >
-                      Cancel
-                    </Button>
-                    <Button
-                      onClick={confirmDelete}
-                      className="bg-red-500 hover:bg-red-600 text-white rounded-md"
-                    >
-                      Delete
-                    </Button>
-                  </div>
-                </div>
-              </Dialog.Content>
-            </Dialog.Portal>
-          </Dialog.Root>
-        </div>
-      </main>
-
-      <Footer />
-    </div>
-  );
-}
-
-export default Home;
+                      onClick={() =>

@@ -29,13 +29,14 @@ function Signup() {
       <Navbar />
       <main className="min-h-[80vh] flex justify-center items-center bg-blue-50 px-4">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6">
-          <h2 className="text-2xl font-bold text-center text-blue-400 mb-6">
+          <h2 className="text-2xl font-bold text-center text-blue-600 mb-6">
             Register
           </h2>
 
           {loading && <Loader />}
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            {/* Username */}
             <div>
               <label
                 htmlFor="username"
@@ -58,6 +59,7 @@ function Signup() {
               )}
             </div>
 
+            {/* Password */}
             <div>
               <label
                 htmlFor="password"

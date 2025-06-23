@@ -53,7 +53,7 @@ function Edittask() {
             Edit Task
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-2">
             <div>
               <label
                 htmlFor="title"

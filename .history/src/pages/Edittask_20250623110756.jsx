@@ -54,7 +54,7 @@ function Edittask() {
           </h2>
 
           <div className="space-y-4">
-            <div>
+            <div className="bg-red-300">
               <label
                 htmlFor="title"
                 className="block text-gray-700 font-medium mb-1"

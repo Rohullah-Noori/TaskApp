@@ -47,9 +47,9 @@ function Edittask() {
 
       {loading && <Loader />}
 
-      <div className="min-h-screen flex items-center justify-center bg-blue-50 px-4">
+      <div className="h-full flex items-center justify-center bg-blue-50 px-4">
         <div className="bg-white shadow-xl rounded-xl p-6 w-full max-w-md space-y-4">
-          <h2 className="text-center text-2xl font-bold text-blue-400">
+          <h2 className="text-center text-2xl font-bold text-blue-600">
             Edit Task
           </h2>
 
